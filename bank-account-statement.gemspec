@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'bank/account/statement/version'
+require 'bank-account-statement/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "bank-account-statement"
-  spec.version       = Bank::Account::Statement::VERSION
+  spec.version       = BankAccountStatement::VERSION
   spec.authors       = ["tiredpixel"]
   spec.email         = ["tiredpixel@posteo.de"]
 
@@ -30,4 +30,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.10"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest"
+  spec.add_development_dependency "minitest-reporters"
 end
