@@ -13,7 +13,7 @@ require_relative '../../../../lib/bank-account-statement/inputs/HTML/CPBKGB22/CH
   describe input_klass.name do
     fixtures.each do |fixture|
       it fixture.to_s do
-        f = File.expand_path("../../../../fixtures/#{fixture}", __FILE__)
+        f = File.expand_path("../../#{fixture}", __FILE__)
         y = "#{f}.yaml"
         
         fc = File.read(f)
