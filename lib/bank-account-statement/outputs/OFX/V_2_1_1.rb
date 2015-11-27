@@ -30,16 +30,6 @@ class V_2_1_1 < OFX::Base
   def p_xml
     Nokogiri::XML::Builder.new { |x|
       x.OFX {
-        x.SIGNONMSGSRSV1 {
-          x.SONRS {
-            x.STATUS {
-              x.CODE 0
-              x.SEVERITY 'INFO'
-            }
-            # x.DTSERVER nil
-            x.LANGUAGE 'ENG'
-          }
-        }
         x.BANKMSGSRSV1 {
           x.STMTTRNRS {
             x.STMTRS {
@@ -50,14 +40,11 @@ class V_2_1_1 < OFX::Base
                 x.ACCTTYPE @data[:account][:type]
               }
               x.BANKTRANLIST {
-                # x.DTSTART nil
-                # x.DTEND nil
                 @data[:transactions].each { |transaction|
                   x.STMTTRN {
                     x.TRNTYPE transaction[:type]
                     x.DTPOSTED p_time(transaction[:posted_at])
                     x.TRNAMT transaction[:amount]
-                    # x.FITID nil
                     x.NAME transaction[:name]
                   }
                 }
