@@ -1,0 +1,32 @@
+--- 
+:bank:
+  :id: "089300"
+:account:
+  :id: "00000001"
+  :type: :CHECKING
+:currency: :GBP
+:transactions:
+- :posted_at: 2011-03-14
+  :type: :OTHER
+  :name: "BROUGHT FORWARD"
+  :amount: "0.00"
+- :posted_at: 2011-03-30
+  :type: :XFER
+  :name: "TFR 91030000000300"
+  :amount: "1112.90"
+- :posted_at: 2011-04-05
+  :type: :CREDIT
+  :name: "A00AA000000AAAAA   AA   000000"
+  :amount: "90.10"
+- :posted_at: 2011-04-11
+  :type: :DEBIT
+  :name: "BANANA"
+  :amount: "-27.18"
+- :posted_at: 2011-04-12
+  :type: :ATM
+  :name: "COOP ATM01:23APR16"
+  :amount: "-90.64"
+:balance:
+  :ledger:
+    :balanced_at: 2011-04-27
+    :amount: "507.78"
