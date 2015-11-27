@@ -1,7 +1,7 @@
 require 'bigdecimal'
 require 'date'
 
-require_relative '../../base.rb'
+require_relative '../../base'
 
 
 module BankAccountStatement
@@ -12,35 +12,22 @@ module CHECKING
 
 class V_2011_05_07 < HTML::Base
   
-  def parse
+  
+  def bank
     {
-      'bank'         => {
-        'id' => bank_id,
-      },
-      'account'      => {
-        'id'   => account_id,
-        'type' => account_type,
-      },
-      'currency'     => currency,
-      'transactions' => transactions,
-      'balance'      => balance,
+      :id => p_bank_account_ids[:bank_id].tr('-', ''),
     }
   end
   
-  def bank_id
-    p_bank_account_ids[:bank_id].tr('-', '')
-  end
-  
-  def account_id
-    p_bank_account_ids[:account_id]
-  end
-  
-  def account_type
-    'CHECKING'
+  def account
+    {
+      :id   => p_bank_account_ids[:account_id],
+      :type => :CHECKING,
+    }
   end
   
   def currency
-    'GBP'
+    :GBP
   end
   
   def transactions
@@ -48,10 +35,10 @@ class V_2011_05_07 < HTML::Base
       a = p_transaction_amount(r['Deposits'], r['Withdrawals'])
       
       {
-        'posted_at' => Date.parse(r['Date']),
-        'type'      => p_transaction_type(r['Transaction'], a),
-        'name'      => r['Transaction'].strip,
-        'amount'    => a,
+        :posted_at => Date.parse(r['Date']),
+        :type      => p_transaction_type(r['Transaction'], a),
+        :name      => r['Transaction'].strip,
+        :amount    => a,
       }
     }
   end
@@ -60,9 +47,9 @@ class V_2011_05_07 < HTML::Base
     r = p_transaction_rows.last
     
     {
-      'ledger' => {
-        'balanced_at' => Date.parse(r['Date']),
-        'amount'      => p_clean_amount(r['Balance']),
+      :ledger => {
+        :balanced_at => Date.parse(r['Date']),
+        :amount      => p_clean_amount(r['Balance']),
       },
     }
   end
@@ -101,15 +88,15 @@ class V_2011_05_07 < HTML::Base
   def p_transaction_type(name, amount)
     case name
     when /^BROUGHT FORWARD$/
-      'OTHER'
+      :OTHER
     when /^COOP ATM/
-      'ATM'
+      :ATM
     when /^LINK /
-      'ATM'
+      :ATM
     when /^TFR /
-      'XFER'
+      :XFER
     else
-      amount >= 0 ? 'CREDIT' : 'DEBIT'
+      amount >= 0 ? :CREDIT : :DEBIT
     end
   end
   

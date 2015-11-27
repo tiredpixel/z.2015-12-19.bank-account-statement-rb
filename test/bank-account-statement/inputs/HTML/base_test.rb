@@ -23,24 +23,24 @@ require_relative '../../../../lib/bank-account-statement/inputs/HTML/CPBKGB22/CH
         
         ip = input.parse
         
-        ip['transactions'].each_with_index do |transaction, i|
-          transaction.must_equal yc['transactions'][i].merge({
-            'amount' => BigDecimal(transaction['amount']),
+        ip[:transactions].each_with_index do |transaction, i|
+          transaction.must_equal yc[:transactions][i].merge({
+            :amount => BigDecimal(transaction[:amount]),
           })
         end
         
-        if yc['balance']
-          if yc['balance']['ledger']
-            if x = yc['balance']['ledger']['amount']
-              yc['balance']['ledger']['amount'] = BigDecimal(x)
+        if yc[:balance]
+          if yc[:balance][:ledger]
+            if x = yc[:balance][:ledger][:amount]
+              yc[:balance][:ledger][:amount] = BigDecimal(x)
             end
           end
         end
         
         ip.reject { |k, v|
-          k == 'transactions'
+          k == :transactions
         }.must_equal yc.reject { |k, v|
-          k == 'transactions'
+          k == :transactions
         }
       end
     end

@@ -1,116 +1,116 @@
 --- 
-bank:
-  id: "089300"
-account:
-  id: "00000001"
-  type: CHECKING
-currency: GBP
-transactions:
-- posted_at: 2011-03-14
-  type: OTHER
-  name: "BROUGHT FORWARD"
-  amount: "0.00"
-- posted_at: 2011-03-30
-  type: XFER
-  name: "TFR 91030000000300"
-  amount: "1112.90"
-- posted_at: 2011-03-30
-  type: XFER
-  name: "TFR 93000000000200"
-  amount: "19.13"
-- posted_at: 2011-04-01
-  type: XFER
-  name: "TFR 93000000000200"
-  amount: "-91.64"
-- posted_at: 2011-04-05
-  type: XFER
-  name: "TFR 93000000000200"
-  amount: "-59.47"
-- posted_at: 2011-04-05
-  type: CREDIT
-  name: "A00AA000000AAAAA   AA   000000"
-  amount: "90.10"
-- posted_at: 2011-04-11
-  type: XFER
-  name: "TFR 93000000000200"
-  amount: "-66.94"
-- posted_at: 2011-04-11
-  type: XFER
-  name: "TFR 93000000000200"
-  amount: "72.72"
-- posted_at: 2011-04-12
-  type: DEBIT
-  name: "BANANA"
-  amount: "-27.18"
-- posted_at: 2011-04-12
-  type: XFER
-  name: "TFR 93000000000200"
-  amount: "-18.93"
-- posted_at: 2011-04-12
-  type: XFER
-  name: "TFR 93000000000200"
-  amount: "-72.70"
-- posted_at: 2011-04-12
-  type: CREDIT
-  name: "COUNTER CARD CR"
-  amount: "60.87"
-- posted_at: 2011-04-13
-  type: XFER
-  name: "TFR 93000000000200"
-  amount: "-12.58"
-- posted_at: 2011-04-13
-  type: DEBIT
-  name: "AFFINITY VISA      45440000000"
-  amount: "34.27"
-- posted_at: 2011-04-18
-  type: ATM
-  name: "COOP ATM01:23APR16"
-  amount: "-90.64"
-- posted_at: 2011-04-19
-  type: DEBIT
-  name: "APPLE"
-  amount: "-15.10"
-- posted_at: 2011-04-19
-  type: DEBIT
-  name: "MUSHROOM"
-  amount: "-90.70"
-- posted_at: 2011-04-20
-  type: DEBIT
-  name: "PINEAPPLE"
-  amount: "-45.50"
-- posted_at: 2011-04-21
-  type: DEBIT
-  name: "ORANGE"
-  amount: "-34.89"
-- posted_at: 2011-04-21
-  type: CREDIT
-  name: "ASPARAGUS"
-  amount: "48.44"
-- posted_at: 2011-04-26
-  type: DEBIT
-  name: "LETTUCE"
-  amount: "-55.61"
-- posted_at: 2011-04-26
-  type: DEBIT
-  name: "CABBAGE"
-  amount: "-66.00"
-- posted_at: 2011-04-26
-  type: ATM
-  name: "LINK    01:23APR25"
-  amount: "-78.90"
-- posted_at: 2011-04-26
-  type: ATM
-  name: "LINK    01:23APR21"
-  amount: "-61.29"
-- posted_at: 2011-04-26
-  type: CREDIT
-  name: "CELERY &"
-  amount: "72.84"
-- posted_at: 2011-04-27
-  type: DEBIT
-  name: "PEACH"
-  amount: "-46.88"
-balance:
-  ledger:
-    balanced_at: 2011-04-27
-    amount: "507.78"
+:bank:
+  :id: "089300"
+:account:
+  :id: "00000001"
+  :type: :CHECKING
+:currency: :GBP
+:transactions:
+- :posted_at: 2011-03-14
+  :type: :OTHER
+  :name: "BROUGHT FORWARD"
+  :amount: "0.00"
+- :posted_at: 2011-03-30
+  :type: :XFER
+  :name: "TFR 91030000000300"
+  :amount: "1112.90"
+- :posted_at: 2011-03-30
+  :type: :XFER
+  :name: "TFR 93000000000200"
+  :amount: "19.13"
+- :posted_at: 2011-04-01
+  :type: :XFER
+  :name: "TFR 93000000000200"
+  :amount: "-91.64"
+- :posted_at: 2011-04-05
+  :type: :XFER
+  :name: "TFR 93000000000200"
+  :amount: "-59.47"
+- :posted_at: 2011-04-05
+  :type: :CREDIT
+  :name: "A00AA000000AAAAA   AA   000000"
+  :amount: "90.10"
+- :posted_at: 2011-04-11
+  :type: :XFER
+  :name: "TFR 93000000000200"
+  :amount: "-66.94"
+- :posted_at: 2011-04-11
+  :type: :XFER
+  :name: "TFR 93000000000200"
+  :amount: "72.72"
+- :posted_at: 2011-04-12
+  :type: :DEBIT
+  :name: "BANANA"
+  :amount: "-27.18"
+- :posted_at: 2011-04-12
+  :type: :XFER
+  :name: "TFR 93000000000200"
+  :amount: "-18.93"
+- :posted_at: 2011-04-12
+  :type: :XFER
+  :name: "TFR 93000000000200"
+  :amount: "-72.70"
+- :posted_at: 2011-04-12
+  :type: :CREDIT
+  :name: "COUNTER CARD CR"
+  :amount: "60.87"
+- :posted_at: 2011-04-13
+  :type: :XFER
+  :name: "TFR 93000000000200"
+  :amount: "-12.58"
+- :posted_at: 2011-04-13
+  :type: :DEBIT
+  :name: "AFFINITY VISA      45440000000"
+  :amount: "34.27"
+- :posted_at: 2011-04-18
+  :type: :ATM
+  :name: "COOP ATM01:23APR16"
+  :amount: "-90.64"
+- :posted_at: 2011-04-19
+  :type: :DEBIT
+  :name: "APPLE"
+  :amount: "-15.10"
+- :posted_at: 2011-04-19
+  :type: :DEBIT
+  :name: "MUSHROOM"
+  :amount: "-90.70"
+- :posted_at: 2011-04-20
+  :type: :DEBIT
+  :name: "PINEAPPLE"
+  :amount: "-45.50"
+- :posted_at: 2011-04-21
+  :type: :DEBIT
+  :name: "ORANGE"
+  :amount: "-34.89"
+- :posted_at: 2011-04-21
+  :type: :CREDIT
+  :name: "ASPARAGUS"
+  :amount: "48.44"
+- :posted_at: 2011-04-26
+  :type: :DEBIT
+  :name: "LETTUCE"
+  :amount: "-55.61"
+- :posted_at: 2011-04-26
+  :type: :DEBIT
+  :name: "CABBAGE"
+  :amount: "-66.00"
+- :posted_at: 2011-04-26
+  :type: :ATM
+  :name: "LINK    01:23APR25"
+  :amount: "-78.90"
+- :posted_at: 2011-04-26
+  :type: :ATM
+  :name: "LINK    01:23APR21"
+  :amount: "-61.29"
+- :posted_at: 2011-04-26
+  :type: :CREDIT
+  :name: "CELERY &"
+  :amount: "72.84"
+- :posted_at: 2011-04-27
+  :type: :DEBIT
+  :name: "PEACH"
+  :amount: "-46.88"
+:balance:
+  :ledger:
+    :balanced_at: 2011-04-27
+    :amount: "507.78"
