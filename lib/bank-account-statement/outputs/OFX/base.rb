@@ -6,6 +6,9 @@ module Outputs
 module OFX
 
 class Base < Outputs::Base
+  
+  FILE_EXT = '.ofx'.freeze
+  
 end
 
 end

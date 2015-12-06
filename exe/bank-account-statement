@@ -9,6 +9,7 @@ require 'optparse'
 require 'ostruct'
 
 require_relative '../lib/bank-account-statement'
+require_relative '../lib/bank-account-statement/app'
 require_relative '../lib/bank-account-statement/inputs'
 require_relative '../lib/bank-account-statement/outputs'
 
@@ -84,3 +85,19 @@ OptionParser.new do |opts|
     exit
   end
 end.parse!
+
+
+logger = Logger.new($stdout)
+
+logger.formatter = proc do |severity, datetime, progname, msg|
+  "[#{severity[0]}] #{msg}\n"
+end
+
+app = BankAccountStatement::App.new(
+  :in         => options[:in],
+  :in_format  => options[:in_format],
+  :out        => options[:out],
+  :out_format => options[:out_format],
+  :logger     => logger
+)
+app.run
