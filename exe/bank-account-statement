@@ -53,7 +53,7 @@ OptionParser.new do |opts|
   
   opts.separator ""
   
-  opts.on("--ls-in-format",
+  opts.on("--in-formats",
     "list INPUT_FORMAT support"
   ) do
     puts BankAccountStatement::Inputs::Base.formats.keys.sort
@@ -61,7 +61,7 @@ OptionParser.new do |opts|
     exit
   end
   
-  opts.on("--ls-out-format",
+  opts.on("--out-formats",
     "list OUTPUT_FORMAT support"
   ) do
     puts BankAccountStatement::Outputs::Base.formats.keys.sort
