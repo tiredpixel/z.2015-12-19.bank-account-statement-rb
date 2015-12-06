@@ -7,6 +7,7 @@ module BankAccountStatement
 module Outputs
 module OFX
 
+# OFX 2.1.1 statement generation.
 class V_2_1_1 < OFX::Base
   
   OFX_STRFTIME = '%Y%m%d%H%M%S.%L[%:::z]'.freeze

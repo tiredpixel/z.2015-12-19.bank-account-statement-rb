@@ -10,6 +10,15 @@ module HTML
 module CPBKGB22
 module CHECKING
 
+# HTML statement parsing for 'The co-operative bank' current accounts.
+# 
+# This version is named 2011-05-07 because for quite a while after that time,
+# statements were made available in the same format (also on that date, and
+# perhaps before?). Note, however, that the statement format changed some time
+# around 2015-03-03, for which a different parser should be used. If you
+# experience an error trying to process a recent statement (or rather, a
+# statement downloaded recently, as it could be an old statement), then this is
+# probably why.
 class V_2011_05_07 < HTML::Base
   
   
