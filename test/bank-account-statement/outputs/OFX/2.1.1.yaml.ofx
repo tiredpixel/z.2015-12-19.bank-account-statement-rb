@@ -14,19 +14,19 @@
           <STMTTRN>
             <TRNTYPE>OTHER</TRNTYPE>
             <DTPOSTED>20110314000000.000[+00]</DTPOSTED>
-            <TRNAMT>0.00</TRNAMT>
+            <TRNAMT>0.0</TRNAMT>
             <NAME>BROUGHT FORWARD</NAME>
           </STMTTRN>
           <STMTTRN>
             <TRNTYPE>XFER</TRNTYPE>
             <DTPOSTED>20110330000000.000[+00]</DTPOSTED>
-            <TRNAMT>1112.90</TRNAMT>
+            <TRNAMT>1112.9</TRNAMT>
             <NAME>TFR 91030000000300</NAME>
           </STMTTRN>
           <STMTTRN>
             <TRNTYPE>CREDIT</TRNTYPE>
             <DTPOSTED>20110405000000.000[+00]</DTPOSTED>
-            <TRNAMT>90.10</TRNAMT>
+            <TRNAMT>90.1</TRNAMT>
             <NAME>A00AA000000AAAAA   AA   000000</NAME>
           </STMTTRN>
           <STMTTRN>

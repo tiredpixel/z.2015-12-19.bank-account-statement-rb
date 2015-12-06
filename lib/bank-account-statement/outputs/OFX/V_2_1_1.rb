@@ -27,6 +27,10 @@ class V_2_1_1 < OFX::Base
     datetime.strftime(OFX_STRFTIME)
   end
   
+  def p_amount(amount)
+    amount.to_s('F')
+  end
+  
   def p_xml
     Nokogiri::XML::Builder.new { |x|
       x.OFX {
@@ -44,13 +48,13 @@ class V_2_1_1 < OFX::Base
                   x.STMTTRN {
                     x.TRNTYPE transaction[:type]
                     x.DTPOSTED p_time(transaction[:posted_at])
-                    x.TRNAMT transaction[:amount]
+                    x.TRNAMT p_amount(transaction[:amount])
                     x.NAME transaction[:name]
                   }
                 }
               }
               x.LEDGERBAL {
-                x.BALAMT @data[:balance][:ledger][:amount]
+                x.BALAMT p_amount(@data[:balance][:ledger][:amount])
                 x.DTASOF p_time(@data[:balance][:ledger][:balanced_at])
               }
             }

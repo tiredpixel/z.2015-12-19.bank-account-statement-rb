@@ -1,3 +1,5 @@
+require 'bigdecimal'
+
 require_relative '../../../test_helper'
 require_relative '../../../../lib/bank-account-statement/outputs'
 
@@ -14,6 +16,13 @@ require_relative '../../../../lib/bank-account-statement/outputs'
         f = "#{y}.ofx"
         
         yc = YAML.load_file(y)
+        
+        yc[:transactions] = yc[:transactions].map { |t|
+          t.merge({ :amount => BigDecimal(t[:amount]) })
+        }
+        
+        yc[:balance][:ledger][:amount] =
+            BigDecimal(yc[:balance][:ledger][:amount])
         
         output = output_klass.new(yc)
         op     = output.generate
