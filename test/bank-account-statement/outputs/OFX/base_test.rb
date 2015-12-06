@@ -1,5 +1,5 @@
 require_relative '../../../test_helper'
-require_relative '../../../../lib/bank-account-statement/outputs/OFX/V_2_1_1'
+require_relative '../../../../lib/bank-account-statement/outputs'
 
 
 {

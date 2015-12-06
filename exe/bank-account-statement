@@ -1,0 +1,103 @@
+#!/usr/bin/env ruby
+
+
+$stdout.sync = true
+
+
+require 'logger'
+require 'optparse'
+require 'ostruct'
+
+require_relative '../lib/bank-account-statement'
+require_relative '../lib/bank-account-statement/app'
+require_relative '../lib/bank-account-statement/inputs'
+require_relative '../lib/bank-account-statement/outputs'
+
+
+options = OpenStruct.new
+
+OptionParser.new do |opts|
+  opts.version = BankAccountStatement::VERSION
+  
+  opts.banner = opts.ver
+  
+  opts.separator ""
+
+  opts.separator "Usage: bank-account-statement [OPTIONS]"
+  
+  opts.separator ""
+  
+  opts.on("-i", "--in INPUT",
+    "input"
+  ) do |o|
+    options[:in] = o
+  end
+  
+  opts.on("-I", "--in-format INPUT_FORMAT",
+    "input format for INPUT"
+  ) do |o|
+    options[:in_format] = o
+  end
+  
+  opts.on("-o", "--out OUTPUT",
+    "output"
+  ) do |o|
+    options[:out] = o
+  end
+  
+  opts.on("-O", "--out-format OUTPUT_FORMAT",
+    "output format for OUTPUT"
+  ) do |o|
+    options[:out_format] = o
+  end
+  
+  opts.separator ""
+  
+  opts.on("--ls-in-format",
+    "list INPUT_FORMAT support"
+  ) do
+    puts BankAccountStatement::Inputs::Base.formats.keys.sort
+    
+    exit
+  end
+  
+  opts.on("--ls-out-format",
+    "list OUTPUT_FORMAT support"
+  ) do
+    puts BankAccountStatement::Outputs::Base.formats.keys.sort
+    
+    exit
+  end
+  
+  opts.separator ""
+  
+  opts.on_tail("--help",
+    "Output (this) help and exit."
+  ) do
+    puts opts
+    exit
+  end
+  
+  opts.on_tail("--version",
+    "Output version and exit."
+  ) do
+    puts opts.ver
+    exit
+  end
+end.parse!
+
+
+logger = Logger.new($stdout)
+
+logger.formatter = proc do |severity, datetime, progname, msg|
+  "[#{severity[0]}] #{msg}\n"
+end
+
+app = BankAccountStatement::App.new(
+  :in         => options[:in],
+  :in_format  => options[:in_format],
+  :out        => options[:out],
+  :out_format => options[:out_format],
+  :logger     => logger
+)
+app.run
