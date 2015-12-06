@@ -28,8 +28,13 @@ class App
       if File.exist?(f_out)
         @logger.warn { "SKIPPED\t#{f_in}" }
       else
-        _convert(f_in, f_out)
-        @logger.info { "CONVERTED\t#{f_in}\t#{f_out}" }
+        begin
+          _convert(f_in, f_out)
+          @logger.info { "CONVERTED\t#{f_in}\t#{f_out}" }
+        rescue
+          @logger.error { "ERRORED\t#{f_in}" }
+          raise
+        end
       end
     end
   end
