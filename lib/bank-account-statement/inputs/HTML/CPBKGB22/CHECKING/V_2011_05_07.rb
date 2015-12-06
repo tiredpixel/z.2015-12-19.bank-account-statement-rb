@@ -15,13 +15,13 @@ class V_2011_05_07 < HTML::Base
   
   def bank
     {
-      :id => p_bank_account_ids[:bank_id].tr('-', ''),
+      :id => _bank_account_ids[:bank_id].tr('-', ''),
     }
   end
   
   def account
     {
-      :id   => p_bank_account_ids[:account_id],
+      :id   => _bank_account_ids[:account_id],
       :type => :CHECKING,
     }
   end
@@ -31,12 +31,12 @@ class V_2011_05_07 < HTML::Base
   end
   
   def transactions
-    p_transaction_rows.map { |r|
-      a = p_transaction_amount(r['Deposits'], r['Withdrawals'])
+    _transaction_rows.map { |r|
+      a = _transaction_amount(r['Deposits'], r['Withdrawals'])
       
       {
         :posted_at => Date.parse(r['Date']),
-        :type      => p_transaction_type(r['Transaction'], a),
+        :type      => _transaction_type(r['Transaction'], a),
         :name      => r['Transaction'].strip,
         :amount    => a,
       }
@@ -44,32 +44,32 @@ class V_2011_05_07 < HTML::Base
   end
   
   def balance
-    r = p_transaction_rows.last
+    r = _transaction_rows.last
     
     {
       :ledger => {
         :balanced_at => Date.parse(r['Date']),
-        :amount      => p_clean_amount(r['Balance']),
+        :amount      => _clean_amount(r['Balance']),
       },
     }
   end
   
   private
   
-  def p_clean_str(str)
+  def _clean_str(str)
     str.encode('UTF-8', invalid: :replace, replace: '').strip
   end
   
-  def p_clean_amount(str)
-    BigDecimal(p_clean_str(str))
+  def _clean_amount(str)
+    BigDecimal(_clean_str(str))
   end
   
-  def p_bank_account_ids
+  def _bank_account_ids
     t = @doc.xpath('//table//table//table//td[@class="field"]/h4').first.text
     t.match(/\D(?<bank_id>\d{2}-\d{2}-\d{2})\D+(?<account_id>\d{8})\D/)
   end
   
-  def p_transaction_rows
+  def _transaction_rows
     header = @doc.xpath('//table//table//table//table//table/thead/tr/th'
         ).map(&:text)
     
@@ -78,14 +78,14 @@ class V_2011_05_07 < HTML::Base
     }
   end
   
-  def p_transaction_amount(deposit, withdrawal)
-    d = p_clean_amount(deposit)
-    w = p_clean_amount(withdrawal)
+  def _transaction_amount(deposit, withdrawal)
+    d = _clean_amount(deposit)
+    w = _clean_amount(withdrawal)
     
     w != 0 ? (w * -1) : d
   end
   
-  def p_transaction_type(name, amount)
+  def _transaction_type(name, amount)
     case name
     when /^BROUGHT FORWARD$/
       :OTHER

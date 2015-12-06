@@ -17,21 +17,21 @@ class V_2_1_1 < OFX::Base
   ].freeze
   
   def generate
-    xml_b = p_xml.to_xml.split("\n").drop(1) # :|
+    xml_b = _xml.to_xml.split("\n").drop(1) # :|
     (OFX_HEADER + xml_b).join("\n")
   end
   
   private
   
-  def p_time(datetime)
+  def _time(datetime)
     datetime.strftime(OFX_STRFTIME)
   end
   
-  def p_amount(amount)
+  def _amount(amount)
     amount.to_s('F')
   end
   
-  def p_xml
+  def _xml
     Nokogiri::XML::Builder.new { |x|
       x.OFX {
         x.BANKMSGSRSV1 {
@@ -47,15 +47,15 @@ class V_2_1_1 < OFX::Base
                 @data[:transactions].each { |transaction|
                   x.STMTTRN {
                     x.TRNTYPE transaction[:type]
-                    x.DTPOSTED p_time(transaction[:posted_at])
-                    x.TRNAMT p_amount(transaction[:amount])
+                    x.DTPOSTED _time(transaction[:posted_at])
+                    x.TRNAMT _amount(transaction[:amount])
                     x.NAME transaction[:name]
                   }
                 }
               }
               x.LEDGERBAL {
-                x.BALAMT p_amount(@data[:balance][:ledger][:amount])
-                x.DTASOF p_time(@data[:balance][:ledger][:balanced_at])
+                x.BALAMT _amount(@data[:balance][:ledger][:amount])
+                x.DTASOF _time(@data[:balance][:ledger][:balanced_at])
               }
             }
           }
