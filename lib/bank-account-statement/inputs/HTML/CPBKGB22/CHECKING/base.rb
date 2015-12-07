@@ -28,7 +28,7 @@ class Base < HTML::Base
   def currency
     :GBP
   end
-
+  
   def transactions
     _transaction_rows.map { |r|
       a = _transaction_amount(
@@ -65,7 +65,7 @@ class Base < HTML::Base
   def _clean_amount(str)
     BigDecimal(_clean_str(str))
   end
-
+  
   def _transaction_amount(deposit, withdrawal)
     d = _clean_amount(deposit)
     w = _clean_amount(withdrawal)
