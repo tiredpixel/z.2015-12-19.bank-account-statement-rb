@@ -1,7 +1,7 @@
 require 'bigdecimal'
 require 'date'
 
-require_relative '../../base'
+require_relative 'base'
 
 
 module BankAccountStatement
@@ -19,59 +19,17 @@ module CHECKING
 # experience an error trying to process a recent statement (or rather, a
 # statement downloaded recently, as it could be an old statement), then this is
 # probably why.
-class V_2011_05_07 < HTML::Base
+class V_2011_05_07 < CHECKING::Base
   
-  
-  def bank
-    {
-      :id => _bank_account_ids[:bank_id].tr('-', ''),
-    }
-  end
-  
-  def account
-    {
-      :id   => _bank_account_ids[:account_id],
-      :type => :CHECKING,
-    }
-  end
-  
-  def currency
-    :GBP
-  end
-  
-  def transactions
-    _transaction_rows.map { |r|
-      a = _transaction_amount(r['Deposits'], r['Withdrawals'])
-      
-      {
-        :posted_at => Date.parse(r['Date']),
-        :type      => _transaction_type(r['Transaction'], a),
-        :name      => r['Transaction'].strip,
-        :amount    => a,
-      }
-    }
-  end
-  
-  def balance
-    r = _transaction_rows.last
-    
-    {
-      :ledger => {
-        :balanced_at => Date.parse(r['Date']),
-        :amount      => _clean_amount(r['Balance']),
-      },
-    }
-  end
+  TH = Hash[{
+    :date       => 'Date',
+    :desc       => 'Transaction',
+    :deposit    => 'Deposits',
+    :withdrawal => 'Withdrawals',
+    :balance    => 'Balance',
+  }.map { |k, v| [k, v.freeze] }].freeze
   
   private
-  
-  def _clean_str(str)
-    str.encode('UTF-8', invalid: :replace, replace: '').strip
-  end
-  
-  def _clean_amount(str)
-    BigDecimal(_clean_str(str))
-  end
   
   def _bank_account_ids
     t = @doc.xpath('//table//table//table//td[@class="field"]/h4').first.text
@@ -85,28 +43,6 @@ class V_2011_05_07 < HTML::Base
     @doc.xpath('//table//table//table//table//table/tbody/tr').map { |r|
       Hash[header.zip(r.xpath('td').map(&:text))]
     }
-  end
-  
-  def _transaction_amount(deposit, withdrawal)
-    d = _clean_amount(deposit)
-    w = _clean_amount(withdrawal)
-    
-    w != 0 ? (w * -1) : d
-  end
-  
-  def _transaction_type(name, amount)
-    case name
-    when /^BROUGHT FORWARD$/
-      :OTHER
-    when /^COOP ATM/
-      :ATM
-    when /^LINK /
-      :ATM
-    when /^TFR /
-      :XFER
-    else
-      amount >= 0 ? :CREDIT : :DEBIT
-    end
   end
   
 end
