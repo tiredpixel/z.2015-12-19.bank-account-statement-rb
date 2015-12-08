@@ -18,9 +18,6 @@ output generators, with a simple executable. Unlike various other similar
 programs, I **am** prepared to accept tested pull-requests for other banks and
 output formats. (Please remember to sanitise test fixtures!)
 
-*Bank Account Statement is currently pre-release! It is not yet available as
-a gem.*
-
 More sleep lost by [tiredpixel](https://www.tiredpixel.com/).
 
 
@@ -34,7 +31,8 @@ More sleep lost by [tiredpixel](https://www.tiredpixel.com/).
 Install using [gem](https://rubygems.org/):
 
 ```shell
-gem install bank-account-statement
+gem cert --add <(curl -Ls https://raw.github.com/tiredpixel/bank-account-statement-rb/master/certs/gem-public_cert-tiredpixel@posteo.de-2015-12-08.pem)
+gem install bank-account-statement -P MediumSecurity
 ```
 
 
