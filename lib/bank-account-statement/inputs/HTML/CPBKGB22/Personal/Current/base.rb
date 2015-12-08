@@ -13,6 +13,8 @@ module Current
 
 class Base < HTML::Base
   
+  ACCOUNT_TYPE = :CHECKING
+  
   def bank
     {
       :id => _bank_account_ids[:bank_id].tr('-', ''),
@@ -22,7 +24,7 @@ class Base < HTML::Base
   def account
     {
       :id   => _bank_account_ids[:account_id],
-      :type => :CHECKING,
+      :type => self.class::ACCOUNT_TYPE,
     }
   end
   

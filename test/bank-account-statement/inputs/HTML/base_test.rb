@@ -12,6 +12,12 @@ require_relative '../../../../lib/bank-account-statement/inputs'
   BankAccountStatement::Inputs::HTML::CPBKGB22::Personal::Current::V_2015_03_03 => [
     'HTML/CPBKGB22/Personal/Current/2015-03-03.html',
   ],
+  BankAccountStatement::Inputs::HTML::CPBKGB22::Personal::Savings::V_2011_05_07 => [
+    'HTML/CPBKGB22/Personal/Savings/2011-05-07.html',
+  ],
+  BankAccountStatement::Inputs::HTML::CPBKGB22::Personal::Savings::V_2015_03_03 => [
+    'HTML/CPBKGB22/Personal/Savings/2015-03-03.html',
+  ],
 }.each do |input_klass, fixtures|
   describe input_klass.name do
     fixtures.each do |fixture|
