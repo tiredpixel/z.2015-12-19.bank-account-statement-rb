@@ -52,7 +52,7 @@ pre-2015-03-03 statements to *OFX 2.1.1* (see other formats for later):
 ```shell
 bank-account-statement \
     --in "IN_DIR/*.html" \
-    --in-format HTML/CPBKGB22/CHECKING/V_2011_05_07 \
+    --in-format HTML/CPBKGB22/Personal/Current/V_2011_05_07 \
     --out "OUT_DIR/" \
     --out-format OFX/V_2_1_1
 ```
@@ -63,8 +63,8 @@ bank-account-statement \
 Input formats supported are:
 
 ```
-HTML/CPBKGB22/CHECKING/V_2011_05_07
-HTML/CPBKGB22/CHECKING/V_2015_03_03
+HTML/CPBKGB22/Personal/Current/V_2011_05_07
+HTML/CPBKGB22/Personal/Current/V_2015_03_03
 ```
 
 (Generated with `bank-account-statement --in-formats`.)

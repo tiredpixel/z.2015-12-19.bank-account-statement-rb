@@ -5,14 +5,15 @@ module BankAccountStatement
 module Inputs
 module HTML
 module CPBKGB22
-module CHECKING
+module Personal
+module Current
 
 # HTML statement parsing for The Co-operative Bank current accounts.
 # 
 # This version is named 2015-03-03 because around that time the statement format
 # changed. If you experience an error trying to process old statements (i.e.
 # statements downloaded before this date), please try using a different parser.
-class V_2015_03_03 < CHECKING::Base
+class V_2015_03_03 < Current::Base
   
   TH = Hash[{
     :date       => 'Date',
@@ -43,6 +44,7 @@ class V_2015_03_03 < CHECKING::Base
   
 end
 
+end
 end
 end
 end

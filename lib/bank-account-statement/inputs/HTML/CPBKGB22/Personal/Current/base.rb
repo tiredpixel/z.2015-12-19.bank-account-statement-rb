@@ -1,14 +1,15 @@
 require 'bigdecimal'
 require 'date'
 
-require_relative '../../base'
+require_relative '../../../base'
 
 
 module BankAccountStatement
 module Inputs
 module HTML
 module CPBKGB22
-module CHECKING
+module Personal
+module Current
 
 class Base < HTML::Base
   
@@ -90,6 +91,7 @@ class Base < HTML::Base
   
 end
 
+end
 end
 end
 end
