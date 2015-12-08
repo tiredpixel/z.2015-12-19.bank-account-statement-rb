@@ -70,7 +70,7 @@ HTML/CPBKGB22/CHECKING/V_2015_03_03
 (Generated with `bank-account-statement --in-formats`.)
 
 BIC      | Country | Name
--------------------------
+---------|---------|-----
 CPBKGB22 | GB      | The Co-operative Bank
 
 
