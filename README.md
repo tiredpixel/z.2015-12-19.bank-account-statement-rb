@@ -97,9 +97,9 @@ rake test
 ## Stay Tuned
 
 You can become a
-[watcher](https://github.com/tiredpixel/bank-account-statement/watchers)
+[watcher](https://github.com/tiredpixel/bank-account-statement-rb/watchers)
 on GitHub. And you can become a
-[stargazer](https://github.com/tiredpixel/bank-account-statement/stargazers)
+[stargazer](https://github.com/tiredpixel/bank-account-statement-rb/stargazers)
 if you are so minded. :D
 
 
