@@ -1,6 +1,10 @@
 # Bank Account Statement Changelog
 
 
+## 0.1.1
+
+- update packaging; new version so tags match built packages
+
 ## 0.1.0
 
 - first release! :D MIT Licence
