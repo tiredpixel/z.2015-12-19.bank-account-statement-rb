@@ -18,9 +18,6 @@ output generators, with a simple executable. Unlike various other similar
 programs, I **am** prepared to accept tested pull-requests for other banks and
 output formats. (Please remember to sanitise test fixtures!)
 
-*Bank Account Statement is currently pre-release! It is not yet available as
-a gem.*
-
 More sleep lost by [tiredpixel](https://www.tiredpixel.com/).
 
 
