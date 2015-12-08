@@ -7,7 +7,7 @@ module HTML
 module CPBKGB22
 module CHECKING
 
-# HTML statement parsing for 'The co-operative bank' current accounts.
+# HTML statement parsing for The Co-operative Bank current accounts.
 # 
 # This version is named 2011-05-07 because for quite a while after that time,
 # statements were made available in the same format (also on that date, and

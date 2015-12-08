@@ -9,18 +9,14 @@ Bank Account Statement is a program for transforming the format of bank account
 statements. For some reason, many banks don't offer online bank statements in a
 readily-consumable format (this seems to be especially true in the UK). For
 example, despite it being possible to view bank statements online for UK bank
-*The co-operative bank*, statements for personal current (checking) accounts
+*The Co-operative Bank*, statements for personal current (checking) accounts
 cannot be downloaded except in HTML. Business accounts often don't fare much
 better.
 
 Bank Account Statement mitigates this problem by providing input parsers and
-output generators, with a simple executable. Currently, the only input formatter
-is UK bank *The co-operative bank* HTML personal current account
-pre-2015-03-03 (approx.). Other *The co-operative bank* input formatters are
-planned. The only output formatter is *OFX (Open Financial Exchange) 2.1.1*,
-which should be compatible with most financial programs. Unlike various other
-similar programs, I **am** prepared to accept tested pull-requests for other
-banks and output formats. (Please remember to sanitise test fixtures!)
+output generators, with a simple executable. Unlike various other similar
+programs, I **am** prepared to accept tested pull-requests for other banks and
+output formats. (Please remember to sanitise test fixtures!)
 
 *Bank Account Statement is currently pre-release! It is not yet available as
 a gem.*
@@ -37,30 +33,65 @@ More sleep lost by [tiredpixel](https://www.tiredpixel.com/).
 
 Install using [gem](https://rubygems.org/):
 
-    gem install bank-account-statement
+```shell
+gem install bank-account-statement
+```
 
 
 ## Usage
 
 Get help:
 
-    bank-account-statement --help
+```shell
+bank-account-statement --help
+```
 
-To convert all UK bank *The co-operative bank* HTML personal current account
-pre-2015-03-03 statements to *OFX 2.1.1*:
+To convert all UK bank *The Co-operative Bank* HTML personal current account
+pre-2015-03-03 statements to *OFX 2.1.1* (see other formats for later):
 
-    bank-account-statement \
-        --in "IN_DIR/*.html" \
-	--in-format HTML/CPBKGB22/CHECKING/V_2011_05_07 \
-	--out "OUT_DIR/" \
-	--out-format OFX/V_2_1_1
+```shell
+bank-account-statement \
+    --in "IN_DIR/*.html" \
+    --in-format HTML/CPBKGB22/CHECKING/V_2011_05_07 \
+    --out "OUT_DIR/" \
+    --out-format OFX/V_2_1_1
+```
+
+
+## Input Formats
+
+Input formats supported are:
+
+```
+HTML/CPBKGB22/CHECKING/V_2011_05_07
+HTML/CPBKGB22/CHECKING/V_2015_03_03
+```
+
+(Generated with `bank-account-statement --in-formats`.)
+
+BIC      | Country | Name
+-------------------------
+CPBKGB22 | GB      | The Co-operative Bank
+
+
+## Output Formats
+
+Output formats supported are:
+
+```
+OFX/V_2_1_1
+```
+
+(Generated with `bank-account-statement --out-formats`.)
 
 
 ## Development
 
 Run the tests, which use [MiniTest](https://github.com/seattlerb/minitest):
 
-    rake test
+```shell
+rake test
+```
 
 
 ## Stay Tuned
