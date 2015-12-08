@@ -34,7 +34,8 @@ More sleep lost by [tiredpixel](https://www.tiredpixel.com/).
 Install using [gem](https://rubygems.org/):
 
 ```shell
-gem install bank-account-statement
+gem cert --add <(curl -Ls https://raw.github.com/tiredpixel/bank-account-statement-rb/master/certs/gem-public_cert-tiredpixel@posteo.de-2015-12-08.pem)
+gem install bank-account-statement -P MediumSecurity
 ```
 
 

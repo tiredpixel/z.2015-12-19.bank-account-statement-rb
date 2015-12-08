@@ -9,6 +9,11 @@ Gem::Specification.new do |spec|
   spec.authors       = ["tiredpixel"]
   spec.email         = ["tiredpixel@posteo.de"]
   
+  spec.cert_chain  = [
+    'certs/gem-public_cert-tiredpixel@posteo.de-2015-12-08.pem',
+  ]
+  spec.signing_key = File.expand_path("~/.ssh/gem-private_key.pem") if $0 =~ /gem\z/
+  
   spec.summary       = %q{Bank account statement format transformation (HTML to OFX).}
   spec.description   = %q{}
   spec.homepage      = "https://github.com/tiredpixel/bank-account-statement-rb"
