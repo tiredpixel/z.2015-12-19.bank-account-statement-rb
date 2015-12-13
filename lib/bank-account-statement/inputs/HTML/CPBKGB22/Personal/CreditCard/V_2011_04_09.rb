@@ -44,6 +44,12 @@ class V_2011_04_09 < CreditCard::Base
   
   private
   
+  def _clean_amount(str)
+    s = _clean_str(str)
+    m = s[-2..-1] == 'DR' ? -1 : 1
+    BigDecimal(s) * m
+  end
+  
   def _bank_account_ids
     t = @doc.xpath('//table//table//table//td[@class="field"]/h4').first.text
     
