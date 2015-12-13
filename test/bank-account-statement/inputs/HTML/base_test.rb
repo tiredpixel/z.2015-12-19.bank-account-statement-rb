@@ -44,7 +44,7 @@ require_relative '../../../../lib/bank-account-statement/inputs'
         
         ip[:transactions].each_with_index do |transaction, i|
           transaction.must_equal yc[:transactions][i].merge({
-            :amount => BigDecimal(transaction[:amount]),
+            :amount => BigDecimal(yc[:transactions][i][:amount]),
           })
         end
         
