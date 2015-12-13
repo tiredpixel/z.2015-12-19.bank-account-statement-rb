@@ -15,8 +15,10 @@ better.
 
 Bank Account Statement mitigates this problem by providing input parsers and
 output generators, with a simple executable. Unlike various other similar
-programs, I **am** prepared to accept tested pull-requests for other banks and
-output formats. (Please remember to sanitise test fixtures!)
+programs, I **am** prepared to accept pull-requests for other banks and
+output formats. (Please remember to sanitise any test fixtures! Tests for new
+input formats are not necessarily expected, however, because I'm concerned
+about copyright.)
 
 More sleep lost by [tiredpixel](https://www.tiredpixel.com/).
 
@@ -92,6 +94,9 @@ Run the tests, which use [MiniTest](https://github.com/seattlerb/minitest):
 ```shell
 rake test
 ```
+
+Unfortunately, many input formats have no tests committed, because I'm concerned
+about copyright.
 
 
 ## Stay Tuned
