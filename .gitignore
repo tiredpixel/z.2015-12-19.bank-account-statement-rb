@@ -9,4 +9,8 @@
 /tmp/
 
 # tests excluded because I'm concerned about copyright
-/test/bank-account-statement/inputs/HTML/
+/test/bank-account-statement/inputs/HTML/CPBKGB22/Personal/CreditCard/2011-04-09.html
+/test/bank-account-statement/inputs/HTML/CPBKGB22/Personal/Current/2011-05-07.html
+/test/bank-account-statement/inputs/HTML/CPBKGB22/Personal/Current/2015-03-03.html
+/test/bank-account-statement/inputs/HTML/CPBKGB22/Personal/Savings/2011-05-07.html
+/test/bank-account-statement/inputs/HTML/CPBKGB22/Personal/Savings/2015-03-03.html
