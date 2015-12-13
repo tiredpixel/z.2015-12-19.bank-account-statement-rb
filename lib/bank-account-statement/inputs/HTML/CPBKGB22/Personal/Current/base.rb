@@ -65,10 +65,6 @@ class Base < HTML::Base
     str.encode('UTF-8', invalid: :replace, replace: '').strip
   end
   
-  def _clean_amount(str)
-    BigDecimal(_clean_str(str))
-  end
-  
   def _transaction_amount(deposit, withdrawal)
     d = _clean_amount(deposit)
     w = _clean_amount(withdrawal)

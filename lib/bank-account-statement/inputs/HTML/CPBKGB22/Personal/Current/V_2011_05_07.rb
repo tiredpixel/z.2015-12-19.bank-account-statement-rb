@@ -29,6 +29,12 @@ class V_2011_05_07 < Current::Base
   
   private
   
+  def _clean_amount(str)
+    s = _clean_str(str)
+    m = s[-2..-1] == 'DR' ? -1 : 1
+    BigDecimal(s) * m
+  end
+  
   def _bank_account_ids
     t = @doc.xpath('//table//table//table//td[@class="field"]/h4').first.text
     t.match(/\D(?<bank_id>\d{2}-\d{2}-\d{2})\D+(?<account_id>\d{8})\D/)
