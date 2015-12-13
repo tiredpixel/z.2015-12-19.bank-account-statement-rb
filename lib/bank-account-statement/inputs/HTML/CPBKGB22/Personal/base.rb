@@ -28,10 +28,14 @@ class Base < HTML::Base
         next # annotation line
       end
       
-      a = _transaction_amount(
-        r[self.class::TH[:deposit]],
-        r[self.class::TH[:withdrawal]]
-      )
+      a = if self.class::TH.has_key?(:amount)
+        _clean_amount(r[self.class::TH[:amount]])
+      else
+        _transaction_amount(
+          r[self.class::TH[:deposit]],
+          r[self.class::TH[:withdrawal]]
+        )
+      end
       
       {
         :posted_at => posted_at,

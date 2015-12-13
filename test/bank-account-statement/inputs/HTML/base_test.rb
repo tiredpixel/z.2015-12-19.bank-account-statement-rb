@@ -9,6 +9,9 @@ require_relative '../../../../lib/bank-account-statement/inputs'
   BankAccountStatement::Inputs::HTML::CPBKGB22::Personal::CreditCard::V_2011_04_09 => [
     'HTML/CPBKGB22/Personal/CreditCard/2011-04-09.html',
   ],
+  BankAccountStatement::Inputs::HTML::CPBKGB22::Personal::CreditCard::V_2015_05_27 => [
+    'HTML/CPBKGB22/Personal/CreditCard/2015-05-27.html',
+  ],
   BankAccountStatement::Inputs::HTML::CPBKGB22::Personal::Current::V_2011_05_07 => [
     'HTML/CPBKGB22/Personal/Current/2011-05-07.html',
   ],
