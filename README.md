@@ -63,6 +63,7 @@ bank-account-statement \
 Input formats supported are:
 
 ```
+HTML/CPBKGB22/Personal/CreditCard/V_2011_04_09
 HTML/CPBKGB22/Personal/Current/V_2011_05_07
 HTML/CPBKGB22/Personal/Current/V_2015_03_03
 HTML/CPBKGB22/Personal/Savings/V_2011_05_07
