@@ -7,7 +7,8 @@ require_relative '../../../../lib/bank-account-statement/outputs'
 
 {
   BankAccountStatement::Outputs::OFX::V_2_1_1 => [
-    '2.1.1.yaml',
+    '2.1.1_CHECKING.yaml',
+    '2.1.1_CREDITLINE.yaml',
   ],
 }.each do |output_klass, fixtures|
   describe output_klass.name do
