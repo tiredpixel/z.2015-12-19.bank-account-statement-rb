@@ -25,6 +25,12 @@ class V_2015_03_03 < Current::Base
   
   private
   
+  def _clean_amount(str)
+    s = _clean_str(str)
+    m = s[-1] == '-' ? -1 : 1
+    BigDecimal(s) * m
+  end
+  
   def _bank_account_ids
     t = @doc.xpath('//table//table//table//table//tr').text
     

@@ -1,0 +1,23 @@
+--- 
+:bank:
+:account:
+  :id: "4544000000000000"
+  :type: :CREDITLINE
+:currency: :GBP
+:transactions:
+- :posted_at: 2011-04-05
+  :type: :DEBIT
+  :name: "BLUEBERRY      01234 567890  GB"
+  :amount: "-10.00"
+- :posted_at: 2011-04-06
+  :type: :DEBIT
+  :name: "RASPBERRY           LONDON         GB"
+  :amount: "-20.50"
+- :posted_at: 2011-04-07
+  :type: :DEBIT
+  :name: "STRAWBERRY       0800 000 0000 GB"
+  :amount: "-4.99"
+:balance:
+  :ledger:
+    :balanced_at: 2011-04-08
+    :amount: "-35.49"

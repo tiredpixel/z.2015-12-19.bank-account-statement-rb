@@ -15,8 +15,10 @@ better.
 
 Bank Account Statement mitigates this problem by providing input parsers and
 output generators, with a simple executable. Unlike various other similar
-programs, I **am** prepared to accept tested pull-requests for other banks and
-output formats. (Please remember to sanitise test fixtures!)
+programs, I **am** prepared to accept pull-requests for other banks and
+output formats. (Please remember to sanitise any test fixtures! Tests for new
+input formats are not necessarily expected, however, because I'm concerned
+about copyright.)
 
 More sleep lost by [tiredpixel](https://www.tiredpixel.com/).
 
@@ -61,6 +63,8 @@ bank-account-statement \
 Input formats supported are:
 
 ```
+HTML/CPBKGB22/Personal/CreditCard/V_2011_04_09
+HTML/CPBKGB22/Personal/CreditCard/V_2015_05_27
 HTML/CPBKGB22/Personal/Current/V_2011_05_07
 HTML/CPBKGB22/Personal/Current/V_2015_03_03
 HTML/CPBKGB22/Personal/Savings/V_2011_05_07
@@ -92,6 +96,9 @@ Run the tests, which use [MiniTest](https://github.com/seattlerb/minitest):
 ```shell
 rake test
 ```
+
+Unfortunately, many input formats have no tests committed, because I'm concerned
+about copyright.
 
 
 ## Stay Tuned

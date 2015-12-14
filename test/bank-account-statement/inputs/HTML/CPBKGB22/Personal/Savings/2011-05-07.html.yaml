@@ -61,7 +61,7 @@
 - :posted_at: 2011-04-13
   :type: :DEBIT
   :name: "AFFINITY VISA      45440000000"
-  :amount: "34.27"
+  :amount: "-34.27"
 - :posted_at: 2011-04-18
   :type: :ATM
   :name: "COOP ATM01:23APR16"
