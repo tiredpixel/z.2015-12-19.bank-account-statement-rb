@@ -35,14 +35,18 @@ class V_2015_05_27 < CreditCard::Base
   }.map { |k, v| [k, v.freeze] }].freeze
   
   def balance
+    # original format has 5 columns
     balanced_at = @doc.xpath(
         '(//table//table//td[@class="dataRowL"]/table//tr)[1]/td[5]').text
+    # slight change in format has 4 columns
+    balanced_at2 = @doc.xpath(
+        '(//table//table//td[@class="dataRowL"]/table//tr)[1]/td[4]').text
     amount = @doc.xpath(
         '(//table//table//td[@class="dataRowL"]/table//tr)[2]/td[2]').text
     
     {
       :ledger => {
-        :balanced_at => Date.parse(balanced_at),
+        :balanced_at => Date.parse([balanced_at, balanced_at2].join(' ')),
         :amount      => _clean_amount(amount),
       },
     }
