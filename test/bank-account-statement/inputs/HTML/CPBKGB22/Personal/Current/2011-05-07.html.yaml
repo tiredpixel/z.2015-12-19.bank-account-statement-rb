@@ -61,7 +61,7 @@
 - :posted_at: 2011-04-13
   :type: :DEBIT
   :name: "AFFINITY VISA      45440000000"
-  :amount: "34.27"
+  :amount: "-34.27"
 - :posted_at: 2011-04-18
   :type: :ATM
   :name: "COOP ATM01:23APR16"
@@ -109,8 +109,8 @@
 - :posted_at: 2011-04-27
   :type: :DEBIT
   :name: "PEACH"
-  :amount: "-46.88"
+  :amount: "-1046.88"
 :balance:
   :ledger:
     :balanced_at: 2011-04-27
-    :amount: "507.78"
+    :amount: "-492.22"

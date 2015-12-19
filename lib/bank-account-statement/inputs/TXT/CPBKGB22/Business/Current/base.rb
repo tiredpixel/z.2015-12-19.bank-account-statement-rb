@@ -1,4 +1,3 @@
-require 'bigdecimal'
 require 'date'
 
 require_relative '../base'
@@ -6,17 +5,17 @@ require_relative '../base'
 
 module BankAccountStatement
 module Inputs
-module HTML
+module TXT
 module CPBKGB22
-module Personal
+module Business
 module Current
 
-class Base < Personal::Base
+class Base < Business::Base
   
   ACCOUNT_TYPE = :CHECKING
   
   def bank
-    { :id => _bank_account_ids[:bank_id].tr('-', '') }
+    { :id => _bank_account_ids[:bank_id] }
   end
   
   def balance
@@ -24,8 +23,8 @@ class Base < Personal::Base
     
     {
       :ledger => {
-        :balanced_at => Date.parse(r[self.class::TH[:date]]),
-        :amount      => _clean_amount(r[self.class::TH[:balance]]),
+        :balanced_at => Date.parse(r[:date]),
+        :amount      => _clean_amount(r[:balance]),
       },
     }
   end
