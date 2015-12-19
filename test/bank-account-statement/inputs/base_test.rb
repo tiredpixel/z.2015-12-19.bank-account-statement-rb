@@ -35,7 +35,6 @@ require_relative '../../../lib/bank-account-statement/inputs'
         y = "#{f}.yaml"
         
         begin
-          p f ###tp
           fc = File.read(f)
         rescue Errno::ENOENT
           skip # this fixture isn't included because of concerns about copyright
