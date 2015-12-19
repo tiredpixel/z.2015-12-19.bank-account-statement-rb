@@ -84,6 +84,7 @@ CPBKGB22 | GB      | The Co-operative Bank
 Output formats supported are:
 
 ```
+CSV/Column_2
 OFX/V_2_1_1
 ```
 
