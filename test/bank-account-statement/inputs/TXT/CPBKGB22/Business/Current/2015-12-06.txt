@@ -1,0 +1,17 @@
+BRANCH : BUSINESS DIRECTPLUS               0892990000000100                                PAGE   1                                 
+
+BIC : CPBKGB22            IBAN : GB21CPBK08929900000001                                                                             
+
+TYPE : BUS DIRPLUS           EXAMPLE LTD                                                  06 DEC 15                                 
+
+   DATE     DESCRIPTION                                  WITHDRAWALS      DEPOSITS        BALANCE                                   
+
+          NEW ACCOUNT                                                                        NIL.                                   
+ 1 NOV 15 WIDGETS LTD                                                     1,200.00       1,200.00                                   
+ 2 NOV 15 SO DR A EXAMPLE EXAMPLE                             567.89                       632.11                                   
+ 3 NOV 15 DR A EXAMPLE EXAMPLE                                543.21                        88.90                                   
+12 NOV 15 WIDGETS LTD                                                     2,400.00       2,488.90                                   
+26 NOV 15 UNTAXED INTEREST                                                    0.07                                                  
+26 NOV 15 WIDGETS LTD INV-001                                             4,800.00       7,288.97                                   
+05 DEC 15 DD BANANAS INC 00000001                              12.34                     7,276.63                                   
+06 DEC 15 DR A EXAMPLE EXAMPLE                                123.45                     7,153.18
