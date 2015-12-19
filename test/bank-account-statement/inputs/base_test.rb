@@ -1,8 +1,8 @@
 require 'bigdecimal'
 require 'yaml'
 
-require_relative '../../../test_helper'
-require_relative '../../../../lib/bank-account-statement/inputs'
+require_relative '../../test_helper'
+require_relative '../../../lib/bank-account-statement/inputs'
 
 
 {
@@ -24,14 +24,18 @@ require_relative '../../../../lib/bank-account-statement/inputs'
   BankAccountStatement::Inputs::HTML::CPBKGB22::Personal::Savings::V_2015_03_03 => [
     'HTML/CPBKGB22/Personal/Savings/2015-03-03.html',
   ],
+  BankAccountStatement::Inputs::TXT::CPBKGB22::Business::Current::V_2015_12_06 => [
+    'TXT/CPBKGB22/Business/Current/2015-12-06.txt',
+  ],
 }.each do |input_klass, fixtures|
   describe input_klass.name do
     fixtures.each do |fixture|
       it fixture.to_s do
-        f = File.expand_path("../../#{fixture}", __FILE__)
+        f = File.expand_path("../#{fixture}", __FILE__)
         y = "#{f}.yaml"
         
         begin
+          p f ###tp
           fc = File.read(f)
         rescue Errno::ENOENT
           skip # this fixture isn't included because of concerns about copyright

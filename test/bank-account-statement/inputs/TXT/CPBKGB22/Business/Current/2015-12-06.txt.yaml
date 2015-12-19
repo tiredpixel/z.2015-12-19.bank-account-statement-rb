@@ -1,0 +1,44 @@
+--- 
+:bank:
+  :id: "089299"
+:account:
+  :id: "00000001"
+  :type: :CHECKING
+:currency: :GBP
+:transactions:
+- :posted_at: 2015-11-01
+  :type: :CREDIT
+  :name: "WIDGETS LTD"
+  :amount: "1200.00"
+- :posted_at: 2015-11-02
+  :type: :REPEATPMT
+  :name: "SO DR A EXAMPLE EXAMPLE"
+  :amount: "-567.89"
+- :posted_at: 2015-11-03
+  :type: :DEBIT
+  :name: "DR A EXAMPLE EXAMPLE"
+  :amount: "-543.21"
+- :posted_at: 2015-11-12
+  :type: :CREDIT
+  :name: "WIDGETS LTD"
+  :amount: "2400.00"
+- :posted_at: 2015-11-26
+  :type: :CREDIT
+  :name: "UNTAXED INTEREST"
+  :amount: "0.07"
+- :posted_at: 2015-11-26
+  :type: :CREDIT
+  :name: "WIDGETS LTD INV-001"
+  :amount: "4800.00"
+- :posted_at: 2015-12-05
+  :type: :DIRECTDEBIT
+  :name: "DD BANANAS INC 00000001"
+  :amount: "-12.34"
+- :posted_at: 2015-12-06
+  :type: :DEBIT
+  :name: "DR A EXAMPLE EXAMPLE"
+  :amount: "-123.45"
+:balance:
+  :ledger:
+    :balanced_at: 2015-12-06
+    :amount: "7153.18"
