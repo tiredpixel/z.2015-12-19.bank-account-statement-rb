@@ -1,20 +1,25 @@
 require 'bigdecimal'
 require 'yaml'
 
-require_relative '../../../test_helper'
-require_relative '../../../../lib/bank-account-statement/outputs'
+require_relative '../../test_helper'
+require_relative '../../../lib/bank-account-statement/outputs'
 
 
 {
   BankAccountStatement::Outputs::CSV::Column_2 => [
-    'column_2.yaml',
+    'CSV/column_2.yaml',
+  ],
+  BankAccountStatement::Outputs::OFX::V_2_1_1 => [
+    'OFX/2.1.1_CHECKING.yaml',
+    'OFX/2.1.1_CREDITLINE.yaml',
   ],
 }.each do |output_klass, fixtures|
   describe output_klass.name do
     fixtures.each do |fixture|
       it fixture.to_s do
         y = File.expand_path("../#{fixture}", __FILE__)
-        f = "#{y}.csv"
+        e = output_klass.superclass::FILE_EXT
+        f = "#{y}#{e}"
         
         yc = YAML.load_file(y)
         
